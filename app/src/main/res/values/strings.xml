@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PratikumMP</string>
+    <string name="fragment_one">Fragment one</string>
+    <string name="fragment_two">Fragment two</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment one</string>
+    <string name="hello_blank_fragment_two">Hello blank fragment Two</string>
+    <string name="send_message">send Message!</string>
+    <string name="check_fragment">Check Fragment</string>
+</resources>
