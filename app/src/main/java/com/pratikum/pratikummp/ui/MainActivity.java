@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button buttontest,buttonfragment;
+    Button buttontest,buttonfragment,sharepref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttontest = findViewById(R.id.btn_senddata);
         buttonfragment = findViewById(R.id.btn_fragment);
+        sharepref = findViewById(R.id.btn_sharedpreference);
 
     }
 
@@ -38,6 +39,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonfragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intentsend = new Intent(getApplicationContext(),MainFragment.class);
+                startActivity(intentsend);
+
+
+            }
+        });
+
+        sharepref.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
