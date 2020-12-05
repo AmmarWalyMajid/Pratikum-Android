@@ -9,9 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.noActionBar">
-        <activity android:name=".MainFragment" />
+        <activity android:name=".ui.ProfilActivity"></activity>
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.ViewRoomDataActivity" />
+        <activity android:name=".ui.RoomDataActivity" />
+        <activity android:name=".ui.AddRoomDataActivity" />
+        <activity android:name=".ui.SharedPrefActivity" />
+        <activity android:name=".ui.MainFragment" />
         <activity android:name=".MainGet" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

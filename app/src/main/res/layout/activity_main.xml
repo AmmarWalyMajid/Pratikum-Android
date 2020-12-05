@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorvalue"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <Button
         android:id="@+id/btn_senddata"
@@ -20,5 +20,29 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/check_fragment"/>
+
+    <Button
+        android:layout_below="@id/btn_fragment"
+        android:id="@+id/btn_sharedpreference"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/shared_preference"/>
+
+    <Button
+        android:layout_below="@id/btn_sharedpreference"
+        android:id="@+id/btn_roomdatabase"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="ROOM DATABASE"/>
+
+    <Button
+        android:layout_below="@id/btn_roomdatabase"
+        android:id="@+id/btn_login"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="login with shared preference"/>
+
+
+
 
 </RelativeLayout>

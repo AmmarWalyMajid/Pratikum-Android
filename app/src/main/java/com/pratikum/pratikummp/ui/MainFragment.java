@@ -1,4 +1,4 @@
-package com.pratikum.pratikummp;
+package com.pratikum.pratikummp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.pratikum.pratikummp.Fragment.FragementTwo;
 import com.pratikum.pratikummp.Fragment.FragmentOne;
+import com.pratikum.pratikummp.R;
 
 public class MainFragment extends AppCompatActivity {
 
