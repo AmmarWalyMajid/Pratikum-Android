@@ -3,6 +3,7 @@
     package="com.pratikum.pratikummp">
 
     <application
+        android:name=".Data.db.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

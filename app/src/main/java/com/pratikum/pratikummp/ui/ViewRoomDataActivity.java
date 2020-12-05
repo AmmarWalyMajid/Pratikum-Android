@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.pratikum.pratikummp.Adapter.RecylerViewAdapter;
 import com.pratikum.pratikummp.Data.db.AppDatabase;
+import com.pratikum.pratikummp.Data.db.DataListener;
 import com.pratikum.pratikummp.Data.db.MyApp;
 import com.pratikum.pratikummp.Data.model.Mahasiswa;
 import com.pratikum.pratikummp.R;
@@ -37,8 +38,9 @@ public class ViewRoomDataActivity extends AppCompatActivity {
         setAdapter();
     }
     private void fetchDataFromRoom() {
-        db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class,"mahasiswa").allowMainThreadQueries().build();
+        db = MyApp.getInstance().getDb();
+//        db = Room.databaseBuilder(getApplicationContext(),
+//                AppDatabase.class,"mahasiswa").allowMainThreadQueries().build();
         listMahasiswas = db.userDao().getAll();
 
         //just checking data from db
@@ -56,6 +58,15 @@ public class ViewRoomDataActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         myRecyclerview.setLayoutManager(llm);
         recycleAdapter =new RecylerViewAdapter(this,listMahasiswas);
+        recycleAdapter.setListener(new DataListener() {
+            @Override
+            public Void onRemoveClick(Mahasiswa mahasiswa) {
+
+                fetchDataFromRoom();
+
+                return null;
+            }
+        });
     }
     private void setAdapter() {
         myRecyclerview.setAdapter(recycleAdapter);

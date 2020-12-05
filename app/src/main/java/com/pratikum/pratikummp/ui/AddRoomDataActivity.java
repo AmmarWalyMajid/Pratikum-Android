@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.pratikum.pratikummp.Data.Dao.MahasiswaDao;
 import com.pratikum.pratikummp.Data.db.MyApp;
 import com.pratikum.pratikummp.Data.model.Mahasiswa;
 import com.pratikum.pratikummp.R;
@@ -25,7 +26,7 @@ public class AddRoomDataActivity extends AppCompatActivity {
     EditText etKejuruan;
     EditText etAlamat;
     Mahasiswa mahasiswa;
-    private Mahasiswa dao;
+    private MahasiswaDao dao;
 
 
     @Override
@@ -58,7 +59,8 @@ public class AddRoomDataActivity extends AppCompatActivity {
             mahasiswa.setNim(etNim.getText().toString());
             //Insert data in database
 //            getDb(getApplicationContext()).userDao().insertAll(mahasiswa);
-            dao = (Mahasiswa) getInstance().getDb().userDao();
+            dao = (MahasiswaDao) getInstance().getDb().userDao();
+            dao.insertAll(mahasiswa);
             startActivity(new Intent(AddRoomDataActivity.this,RoomDataActivity.class));
         }else {
             Toast.makeText(this, "Mohon masukkan dengan benar", Toast.LENGTH_SHORT).show();

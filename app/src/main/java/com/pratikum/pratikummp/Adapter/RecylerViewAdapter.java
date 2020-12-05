@@ -18,6 +18,7 @@ import com.pratikum.pratikummp.Data.model.Mahasiswa;
 import com.pratikum.pratikummp.R;
 import com.pratikum.pratikummp.ui.AddRoomDataActivity;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,11 @@ public class RecylerViewAdapter extends  RecyclerView.Adapter<RecylerViewAdapter
 
     private Context mContext;
     private List<Mahasiswa> albumList = new ArrayList<>();
+
+    public void setListener(DataListener listener) {
+        this.listener = listener;
+    }
+
     private DataListener listener;
 
 
@@ -48,6 +54,7 @@ public class RecylerViewAdapter extends  RecyclerView.Adapter<RecylerViewAdapter
         holder.nim.setText(album.getNim());
         holder.kejuruan.setText(album.getKejuruan());
         holder.alamat.setText(album.getAlamat());
+        holder.bind(album,listener);
 
     }
 
@@ -61,6 +68,8 @@ public class RecylerViewAdapter extends  RecyclerView.Adapter<RecylerViewAdapter
         TextView nama,nim,kejuruan,alamat;
         Button delete;
         private Mahasiswa data;
+        private DataListener listener;
+
         public MyViewHolder(View v) {
             super(v);
 
@@ -73,10 +82,20 @@ public class RecylerViewAdapter extends  RecyclerView.Adapter<RecylerViewAdapter
             delete.setOnClickListener(this);
             v.setOnClickListener(this);
         }
+        void bind(Mahasiswa data, DataListener listener) {
+            this.data = data;
+            this.listener = listener;
+
+//            tvNama.setText(data.getNama());
+//            tvNim.setText(data.getNim());
+//
+//            loadImage(new File(data.getGambar()));
+        }
 
         @Override
         public void onClick(View v) {
             if(v.getId() == R.id.deletebtn){
+//                data=albumList.get(getAdapterPosition());
                 MyApp.getInstance().getDb().userDao().deleteUsers(data);
                 listener.onRemoveClick(data);
                 Toast.makeText(itemView.getContext(),"Berhasil dihapus",Toast.LENGTH_SHORT).show();
@@ -94,6 +113,7 @@ public class RecylerViewAdapter extends  RecyclerView.Adapter<RecylerViewAdapter
         this.albumList = albumList;
 
     }
+
 
 
 }
