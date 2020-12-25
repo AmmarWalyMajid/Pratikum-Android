@@ -62,7 +62,9 @@ public class ViewRoomDataActivity extends AppCompatActivity {
             @Override
             public Void onRemoveClick(Mahasiswa mahasiswa) {
 
-                fetchDataFromRoom();
+                listMahasiswas.clear();
+                listMahasiswas.addAll(db.userDao().getAll());
+                recycleAdapter.notifyDataSetChanged();
 
                 return null;
             }

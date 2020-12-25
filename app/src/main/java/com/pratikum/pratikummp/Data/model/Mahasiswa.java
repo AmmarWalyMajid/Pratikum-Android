@@ -8,6 +8,8 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Mahasiswa {
 
+
+
     @PrimaryKey(autoGenerate = true)
     int id;
     @ColumnInfo(name = "nama")
@@ -18,6 +20,16 @@ public class Mahasiswa {
     String kejuruan;
     @ColumnInfo(name = "alamat")
     String alamat;
+
+    public String getGambar() {
+        return gambar;
+    }
+
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
+    }
+
+    String gambar;
 
     public int getId() {
         return id;
@@ -49,4 +61,5 @@ public class Mahasiswa {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
+
 }

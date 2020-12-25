@@ -15,9 +15,38 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/imagepict"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/add_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/circle"
+                android:src="@drawable/ic_camera"
+                tools:ignore="ContentDescription,RtlHardcoded" />
+
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/etNama"
@@ -25,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_marginBottom="10dp"
+            android:inputType="text"
             android:textColorHint="@color/colorwhite"
             android:textColor="@color/colorwhite"
             android:hint="Nama" />
@@ -34,6 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:inputType="text"
             android:layout_marginBottom="10dp"
             android:textColorHint="@color/colorwhite"
             android:textColor="@color/colorwhite"
@@ -54,6 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:inputType="text"
             android:layout_marginBottom="10dp"
             android:textColorHint="@color/colorwhite"
             android:textColor="@color/colorwhite"
@@ -64,7 +96,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
-            android:text="Simpan"
+            android:text="save"
+            android:inputType="text"
             android:textColor="#FFFF"
             android:layout_marginBottom="25dp"/>
 

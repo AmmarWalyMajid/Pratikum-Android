@@ -16,8 +16,12 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        db =Room.databaseBuilder(this,
-                AppDatabase.class,"mahasiswa").allowMainThreadQueries().build();
+        db =Room.databaseBuilder(this,AppDatabase.class,"mahasiswa")
+                .addMigrations(DataBasemigrations.MIGRATION_1_TO_2)
+                .allowMainThreadQueries()
+                .build();
+
+//                AppDatabase.class,"mahasiswa").allowMainThreadQueries().build();
         INSTANCE = this;
 
     }
