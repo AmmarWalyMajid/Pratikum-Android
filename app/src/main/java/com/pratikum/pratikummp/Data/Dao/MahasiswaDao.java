@@ -10,6 +10,7 @@ import com.pratikum.pratikummp.Data.model.Mahasiswa;
 
 import java.util.List;
 
+
 @Dao
 public interface MahasiswaDao {
 
